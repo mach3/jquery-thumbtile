@@ -1,0 +1,9 @@
+{
+    "name": "thumbtile.js",
+    "version": "0.8.0",
+    "devDependencies": {
+        "grunt": "~0.4",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-concat": "*"
+    }
+}

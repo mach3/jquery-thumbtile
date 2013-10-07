@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ThumbTile Demo</title>
+	<style>
+	#demo {
+		width: 960px;
+		min-height: 100px;
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+
+	<h1>ThumbTile Demo</h1>
+	<p>
+		<button id="button-demo">Random Resize</button>
+	</p>
+
+	<div id="demo"></div>
+
+	<script src="../bower_components/jquery/jquery.js"></script>
+	<script src="../src/thumbtile.js"></script>
+
+	<script>
+
+	var images = (function(){
+		var i, images = [], sample;
+		sample = ["a.png", "b.png", "c.png", "d.png"];
+		i = 30;
+		while(i--){
+			images.push({
+				src: sample[parseInt(Math.random() * 4, 10)],
+				data: {
+					name: "sample-" + i
+				}
+			});
+		}
+		return images;
+	}());
+
+	$("#demo").thumbTile(images, {});
+
+	$("#button-demo").on("click", function(){
+		var width = 600 + parseInt(Math.random() * 600, 10);
+		$("#demo").width(width).thumbTile();
+	});
+
+	</script>
+	
+</body>
+</html>
